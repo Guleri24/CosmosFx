@@ -74,6 +74,8 @@ public class CosmosFX<Player> extends Application {
     private static final String SPACE_BOY = null;
     private static final boolean IS_BROWSER = WebAPI.isBrowser();
     private static String spaceBoyName;
+
+
     private final Image[] asteroidImages = {
             new Image(getClass().getResourceAsStream("asteroid1.png"), 140, 140, true, false),
             new Image(getClass().getResourceAsStream("asteroid2.png"), 140, 140, true, false),
@@ -87,34 +89,39 @@ public class CosmosFX<Player> extends Application {
             new Image(getClass().getResourceAsStream("asteroid10.png"), 120, 120, true, false),
             new Image(getClass().getResourceAsStream("asteroid11.png"), 140, 140, true, false)
     };
-    private final Image deflectorShieldImg = new Image(getClass().getResourceAsStream("deflectorshield.png"), 100, 100, true, false);
-    private final Image miniDeflectorShieldImg = new Image(getClass().getResourceAsStream("deflectorshield.png"), 16, 16, true, false);
-    private final Image torpedoImg = new Image(getClass().getResourceAsStream("torpedo.png"), 17, 20, true, false);
+
+    private final Image deflectorShieldImg      = new Image(getClass().getResourceAsStream("deflectorshield.png"), 100, 100, true, false);
+    private final Image miniDeflectorShieldImg  = new Image(getClass().getResourceAsStream("deflectorshield.png"), 16, 16, true, false);
+    private final Image torpedoImg              = new Image(getClass().getResourceAsStream("torpedo.png"), 17, 20, true, false);
+
     private final Image[] enemyImages = {
             new Image(getClass().getResourceAsStream("enemy1.png"), 56, 56, true, false),
             new Image(getClass().getResourceAsStream("enemy2.png"), 50, 50, true, false),
             new Image(getClass().getResourceAsStream("enemy3.png"), 68, 68, true, false)
     };
-    private final Image enemyBossImg0 = new Image(getClass().getResourceAsStream("enemyBoss0.png"), 100, 100, true, false);
-    private final Image enemyBossImg1 = new Image(getClass().getResourceAsStream("enemyBoss1.png"), 100, 100, true, false);
-    private final Image enemyBossImg2 = new Image(getClass().getResourceAsStream("enemyBoss2.png"), 100, 100, true, false);
-    private final Image enemyBossImg3 = new Image(getClass().getResourceAsStream("enemyBoss3.png"), 100, 100, true, false);
-    private final Image enemyBossImg4 = new Image(getClass().getResourceAsStream("enemyBoss4.png"), 100, 100, true, false);
-    private final Image spaceshipImg = new Image(getClass().getResourceAsStream("fighter.png"), 48, 48, true, false);
-    private final Image spaceshipThrustImg = new Image(getClass().getResourceAsStream("fighterThrust.png"), 48, 48, true, false);
-    private final Image miniSpaceshipImg = new Image(getClass().getResourceAsStream("fighter.png"), 16, 16, true, false);
-    private final Image enemyTorpedoImg = new Image(getClass().getResourceAsStream("enemyTorpedo.png"), 21, 21, true, false);
-    private final Image enemyBossTorpedoImg = new Image(getClass().getResourceAsStream("enemyBossTorpedo.png"), 26, 26, true, false);
-    private final Image explosionImg = new Image(getClass().getResourceAsStream("explosion.png"), 960, 768, true, false);
-    private final Image asteroidExplosionImg = new Image(getClass().getResourceAsStream("asteroidExplosion.png"), 2048, 1792, true, false);
-    private final Image spaceShipExplosionImg = new Image(getClass().getResourceAsStream("spaceshipexplosion.png"), 800, 600, true, false);
-    private final Image hitImg = new Image(getClass().getResourceAsStream("torpedoHit2.png"), 400, 160, true, false);
-    private final Image enemyBossHitImg = new Image(getClass().getResourceAsStream("torpedoHit.png"), 400, 160, true, false);
-    private final Image enemyBossExplosionImg = new Image(getClass().getResourceAsStream("enemyBossExplosion.png"), 800, 1400, true, false);
-    private final Image crystalImg = new Image(getClass().getResourceAsStream("crystal.png"), 100, 100, true, false);
-    private final Image crystalExplosionImg = new Image(getClass().getResourceAsStream("crystalExplosion.png"), 400, 700, true, false);
-    private final Image rocketImg = new Image(getClass().getResourceAsStream("rocket.png"), 17, 50, true, false);
-    private final Image rocketExplosionImg = new Image(getClass().getResourceAsStream("rocketExplosion.png"), 512, 896, true, false);
+
+
+    private final Image enemyBossImg0            = new Image(getClass().getResourceAsStream("enemyBoss0.png"), 100, 100, true, false);
+    private final Image enemyBossImg1            = new Image(getClass().getResourceAsStream("enemyBoss1.png"), 100, 100, true, false);
+    private final Image enemyBossImg2            = new Image(getClass().getResourceAsStream("enemyBoss2.png"), 100, 100, true, false);
+    private final Image enemyBossImg3            = new Image(getClass().getResourceAsStream("enemyBoss3.png"), 100, 100, true, false);
+    private final Image enemyBossImg4            = new Image(getClass().getResourceAsStream("enemyBoss4.png"), 100, 100, true, false);
+    private final Image spaceshipImg             = new Image(getClass().getResourceAsStream("fighter.png"), 48, 48, true, false);
+    private final Image spaceshipThrustImg       = new Image(getClass().getResourceAsStream("fighterThrust.png"), 48, 48, true, false);
+    private final Image miniSpaceshipImg         = new Image(getClass().getResourceAsStream("fighter.png"), 16, 16, true, false);
+    private final Image enemyTorpedoImg          = new Image(getClass().getResourceAsStream("enemyTorpedo.png"), 21, 21, true, false);
+    private final Image enemyBossTorpedoImg      = new Image(getClass().getResourceAsStream("enemyBossTorpedo.png"), 26, 26, true, false);
+    private final Image explosionImg             = new Image(getClass().getResourceAsStream("explosion.png"), 960, 768, true, false);
+    private final Image asteroidExplosionImg     = new Image(getClass().getResourceAsStream("asteroidExplosion.png"), 2048, 1792, true, false);
+    private final Image spaceShipExplosionImg    = new Image(getClass().getResourceAsStream("spaceshipexplosion.png"), 800, 600, true, false);
+    private final Image hitImg                   = new Image(getClass().getResourceAsStream("torpedoHit2.png"), 400, 160, true, false);
+    private final Image enemyBossHitImg          = new Image(getClass().getResourceAsStream("torpedoHit.png"), 400, 160, true, false);
+    private final Image enemyBossExplosionImg    = new Image(getClass().getResourceAsStream("enemyBossExplosion.png"), 800, 1400, true, false);
+    private final Image crystalImg               = new Image(getClass().getResourceAsStream("crystal.png"), 100, 100, true, false);
+    private final Image crystalExplosionImg      = new Image(getClass().getResourceAsStream("crystalExplosion.png"), 400, 700, true, false);
+    private final Image rocketImg                = new Image(getClass().getResourceAsStream("rocket.png"), 17, 50, true, false);
+    private final Image rocketExplosionImg       = new Image(getClass().getResourceAsStream("rocketExplosion.png"), 512, 896, true, false);
+
     private boolean running;
     private boolean gameOverScreen;
     private boolean hallOfFameScreen;
